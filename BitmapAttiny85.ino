@@ -18,10 +18,7 @@
 // To use the TinyI2C library from https://github.com/technoblogy/tiny-i2c
 //#include <TinyI2CMaster.h>
 
-// The blue OLED screen requires a long initialization on power on.
-// The code to wait for it to be ready uses 20 bytes of program storage space
-// If you are using a white OLED, this can be reclaimed by uncommenting
-// the following line (before including Tiny4kOLED.h):
+// The blue OLED screen
 #define TINY4KOLED_QUICK_BEGIN
 
 #include <Tiny4kOLED.h>
@@ -45,37 +42,10 @@ void setup() {
   pinMode(4, INPUT_PULLUP);
   pinMode(1, INPUT_PULLUP);
   pinMode(5, OUTPUT);
-  // Two rotations are supported,
-  // The begin() method sets the rotation to 1.
-  //oled.setRotation(0);
 
-  // Some newer devices do not contain an external current reference.
-  // Older devices may also support using the internal curret reference,
-  // which provides more consistent brightness across devices.
-  // The internal current reference can be configured as either low current, or high current.
-  // Using true as the parameter value choses the high current internal current reference,
-  // resulting in a brighter display, and a more effective contrast setting.
-  //oled.setInternalIref(true);
-
-  // This example does not use double buffering.
-
-  // To save space, the bitmap is cropped left and right,
-  // intended to be drawn onto a clear screen
   oled.clear();
 
-  // The display will show two bitmaps,
-  // one of SOLOMON SYSTECH's logo
-  // one of the text SOLOMON SYSTECH
-  // The logo bitmap is 37 pixels wide
-  // The text bitmap is 69 pixels wide
-  // Both are 32 pixels (4 pages) high
-
-
-
-
-
-  // Now that the display is all setup, turn on the display
-  oled.on();
+l
 
 
   oled.bitmap(0, 0, 128, 8, solomon_systech_logo_bitmap);
